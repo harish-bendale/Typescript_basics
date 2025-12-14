@@ -17,6 +17,8 @@ var TakePhoto = /** @class */ (function () {
     function TakePhoto(cameraMode, filter) {
         this.cameraMode = cameraMode;
         this.filter = filter;
+        this.cameraMode = cameraMode;
+        this.filter = filter;
     }
     TakePhoto.prototype.getReelsTime = function () {
         return 8;
@@ -30,8 +32,12 @@ var Instagram = /** @class */ (function (_super) {
         _this.cameraMode = cameraMode;
         _this.filter = filter;
         _this.burst = burst;
+        _this.burst = burst;
         return _this;
     }
+    Instagram.prototype.getData = function () {
+        console.log(this.cameraMode + " " + this.filter + " " + this.burst);
+    };
     Instagram.prototype.getSepia = function () {
         console.log("Sepia ");
     };
@@ -39,3 +45,5 @@ var Instagram = /** @class */ (function (_super) {
 }(TakePhoto));
 var hc = new Instagram("hc", "tc", 3);
 console.log(hc.getReelsTime());
+console.log("Get data function is called ");
+hc.getData();

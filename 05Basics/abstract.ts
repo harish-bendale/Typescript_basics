@@ -2,7 +2,10 @@ abstract class TakePhoto {
     constructor(
         public cameraMode : string,
         public filter : string 
-    ) {}
+    ) {
+        this.cameraMode = cameraMode;
+        this.filter = filter;
+    }
 
     abstract getSepia() : void
     getReelsTime() : number { // we can't write method implementation in interface
@@ -17,8 +20,12 @@ class Instagram extends TakePhoto {
         public burst: number
     ){
         super(cameraMode, filter);
+        this.burst = burst;
     }
 
+    getData() {
+        console.log(this.cameraMode + " " + this.filter + " " + this.burst);
+    }
     getSepia(): void {
         console.log("Sepia ");
     }
@@ -26,3 +33,6 @@ class Instagram extends TakePhoto {
 
 const hc = new Instagram("hc", "tc", 3);
 console.log(hc.getReelsTime());
+
+console.log("Get data function is called ");
+hc.getData();
